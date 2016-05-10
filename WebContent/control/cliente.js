@@ -1,7 +1,7 @@
 // JavaScript Document
 var clienteModule = angular.module('clienteModule',[]);
 
-clienteModule.controller("clienteControl",function($scope,$http){
+ clienteModule.controller("clienteControl",function($scope,$http){
 	
 	urlCliente = 'http://localhost:8080/SistemaLocadora/rs/cliente';
 

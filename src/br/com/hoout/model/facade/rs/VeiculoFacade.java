@@ -1,6 +1,5 @@
 package br.com.hoout.model.facade.rs;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -22,7 +21,7 @@ import br.com.hoout.model.service.VeiculoService;
 			{MediaType.APPLICATION_JSON,
 			MediaType.APPLICATION_XML}
 		)
-@Consumes(MediaType.APPLICATION_JSON)
+@Consumes({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 public class VeiculoFacade {
 	
 	@Inject

@@ -1,6 +1,6 @@
 package br.com.hoout.model.facade.rs;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.inject.Inject;
@@ -15,7 +15,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import br.com.hoout.model.domain.Cliente;
-import br.com.hoout.model.domain.Veiculo;
 import br.com.hoout.model.service.ClienteService;
 
 @Path("/cliente")
@@ -23,7 +22,7 @@ import br.com.hoout.model.service.ClienteService;
 			{MediaType.APPLICATION_JSON,
 			MediaType.APPLICATION_XML}
 		)
-@Consumes(MediaType.APPLICATION_JSON)
+@Consumes({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 public class ClienteFacade {
 	
 	@Inject

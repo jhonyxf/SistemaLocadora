@@ -1,10 +1,16 @@
 package br.com.hoout.model.domain;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -24,18 +30,17 @@ public class Cliente implements Serializable {
 	@Column(name="NM_CLIENTE",length=255,nullable=false)
 	private String nome;
 	
-	@OneToMany(mappedBy="cliente")
+	@OneToMany(mappedBy="cliente",fetch=FetchType.EAGER)
 	private List<Veiculo> veiculos;
 	
 	
 	
 	
-	public Cliente(){}
-	
-	public Cliente(Integer codigo, String nome){
-		this.codigo = codigo;
-		this.nome = nome;
+	public Cliente(){
+		super();
 	}
+	
+
 
 
 
@@ -59,8 +64,6 @@ public class Cliente implements Serializable {
 	}
 	
 	
-	
-
 	@XmlTransient
 	public List<Veiculo> getVeiculos() {
 		return veiculos;

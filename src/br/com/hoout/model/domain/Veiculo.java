@@ -30,13 +30,9 @@ public class Veiculo implements Serializable {
 	private List<Locacao> locacoes;
 	
 	
-	public Veiculo(){}
-	
-	public Veiculo(Integer codigo, String placa){
-		this.codigo = codigo;
-		this.placa = placa;
+	public Veiculo(){
+		
 	}
-
 
 	public Integer getCodigo() {
 		return codigo;
