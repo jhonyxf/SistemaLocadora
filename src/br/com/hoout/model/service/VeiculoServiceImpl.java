@@ -28,7 +28,6 @@ public class VeiculoServiceImpl implements VeiculoService {
 	@Override
 	@Transactional
 	public Veiculo salvar(Veiculo veiculo) {
-		// TODO Auto-generated method stub
 		return veiculoDao.salvar(veiculo);
 	}
 

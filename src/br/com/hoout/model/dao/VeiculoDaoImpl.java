@@ -11,7 +11,7 @@ import br.com.hoout.model.domain.Veiculo;
 public class VeiculoDaoImpl implements VeiculoDao {
 
 	
-	@PersistenceContext(unitName="SistemaLocadoraPU")
+	@PersistenceContext(unitName="SISTEMALOCADORAPU")
 	private EntityManager entityManager;
 	
 	@Override

@@ -2,7 +2,7 @@ var veiculoModule = angular.module('veiculoModule',[]);
 
 	veiculoModule.controller("veiculoControl",function($scope,$http){
 	
-	urlCliente = 'http://localhost:8080/SistemaLocadora/rs/cliente';
+	//urlCliente = 'http://localhost:8080/SistemaLocadora/rs/cliente';
 
 	
 	urlVeiculo = 'http://localhost:8080/SistemaLocadora/rs/veiculo';
@@ -15,13 +15,7 @@ var veiculoModule = angular.module('veiculoModule',[]);
 		});
 	}
 	
-	$scope.pesquisarCliente = function(){
-		$http.get(urlCliente).success(function(clientes){
-			$scope.clientes = clientes;
-		}).error(function (erro){
-		alert(erro);
-		});
-	}
+
 	
 	/* $scope.clientes = [
 		{codigo: 1, nome: 'Jhony',veiculo:{codigo: 1, placa: 'a'}},
@@ -86,6 +80,6 @@ var veiculoModule = angular.module('veiculoModule',[]);
 	}
 	
 	$scope.pesquisarVeiculo();
-	$scope.pesquisarCliente();
+	//$scope.pesquisarCliente();
 	
 });

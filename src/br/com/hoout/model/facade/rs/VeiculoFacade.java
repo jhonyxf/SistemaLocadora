@@ -21,7 +21,7 @@ import br.com.hoout.model.service.VeiculoService;
 			{MediaType.APPLICATION_JSON,
 			MediaType.APPLICATION_XML}
 		)
-@Consumes({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
+@Consumes(MediaType.APPLICATION_JSON)
 public class VeiculoFacade {
 	
 	@Inject

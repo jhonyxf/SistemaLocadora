@@ -3,6 +3,7 @@ package br.com.hoout.model.domain;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -30,7 +31,7 @@ public class Cliente implements Serializable {
 	@Column(name="NM_CLIENTE",length=255,nullable=false)
 	private String nome;
 	
-	@OneToMany(mappedBy="cliente",fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="cliente")
 	private List<Veiculo> veiculos;
 	
 	

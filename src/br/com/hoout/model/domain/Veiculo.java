@@ -25,11 +25,16 @@ public class Veiculo implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="CD_CLIENTE",referencedColumnName="CD_CLIENTE")
 	private Cliente cliente;
-	
-	@OneToMany(mappedBy="veiculo")
-	private List<Locacao> locacoes;
+
 	
 	
+	public Veiculo(Integer codigo, String placa, Cliente cliente) {
+		super();
+		this.codigo = codigo;
+		this.placa = placa;
+		this.cliente = cliente;
+	}
+
 	public Veiculo(){
 		
 	}
