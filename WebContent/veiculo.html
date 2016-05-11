@@ -44,6 +44,16 @@
                   <input type="text" ng-model="veiculo.placa" class="form-control" id="placa" placeholder="Placa">
                 </div>
               </div>
+              <div class="form-group">
+          <label for="exampleInputPassword1" class="col-sm-1 control-label">Dono</label>
+          <div class="col-sm-5">          
+            <select class="form-control"
+               ng-model="veiculo.cliente"
+               ng-options="cliente.nome for cliente in clientes track by cliente.codigo">
+              
+            </select>
+          </div>
+        </div>
 
 
               <div class="form-group">
@@ -60,13 +70,14 @@
     
     	<table class="table table-striped">
         	<thead> 
-            <tr> <th>Código</th> <th>Placa</th></tr>
+            <tr> <th>Código</th> <th>Placa</th><th>Proprietarior</th></tr>
              </thead> 
              <tbody> 
              	<tr ng-repeat="veiculoTabela in veiculos"
                 	ng-click="selecionaVeiculo(veiculoTabela);" >
              	<th scope="row">{{veiculoTabela.codigo}}</th>
                  <td>{{veiculoTabela.placa}}</td>
+                 <td>{{veiculoTabela.cliente.nome}}</td>
                  </tr>
              </tbody>	
 		</table>

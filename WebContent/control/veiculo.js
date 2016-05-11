@@ -87,7 +87,8 @@ var veiculoModule = angular.module('veiculoModule',[]);
 		$scope.veiculo = veiculo;
 	}
 	
-	$scope.pesquisarVeiculo();
 	$scope.pesquisarCliente();
+	$scope.pesquisarVeiculo();
+	
 	
 });

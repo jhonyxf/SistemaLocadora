@@ -44,17 +44,6 @@
                   <input type="text" ng-model="cliente.nome" class="form-control" id="nome" placeholder="Nome">
                 </div>
               </div>
-            <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">Veículo</label>
-                <div class="col-sm-6">
-                    <select class="form-control"
-                    	ng-model="cliente.veiculo"
-                        ng-options="veiculo.placa for veiculo in veiculos track by veiculo.codigo">
-                      
-
-                    </select>
-                </div>
-            </div>
 
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
@@ -70,14 +59,13 @@
     
     	<table class="table table-striped">
         	<thead> 
-            <tr> <th>Código</th> <th>Nome</th><th>Veículo</th></tr>
+            <tr> <th>Código</th> <th>Nome</th></tr>
              </thead> 
              <tbody> 
              	<tr ng-repeat="clienteTabela in clientes"
                 	ng-click="selecionaCliente(clienteTabela);" >
              	<th scope="row">{{clienteTabela.codigo}}</th>
                  <td>{{clienteTabela.nome}}</td>
-                 <td>{{clienteTabela.veiculo.placa}}</td>
                  </tr>
              </tbody>	
 		</table>
