@@ -11,7 +11,7 @@ import br.com.hoout.model.domain.Cliente;
 public class ClienteDaoImpl implements ClienteDao {
 
 	
-	@PersistenceContext(unitName="SistemaLocadoraPU")
+	@PersistenceContext(unitName="SISTEMALOCADORAPU")
 	private EntityManager entityManager;
 	
 	@Override

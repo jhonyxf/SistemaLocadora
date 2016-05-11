@@ -1,7 +1,6 @@
 package br.com.hoout.model.domain;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -59,6 +58,15 @@ public class Veiculo implements Serializable {
 	}
 	
 	
+	
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
 
 	@Override
 	public int hashCode() {

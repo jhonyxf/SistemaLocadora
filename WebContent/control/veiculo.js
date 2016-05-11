@@ -2,10 +2,18 @@ var veiculoModule = angular.module('veiculoModule',[]);
 
 	veiculoModule.controller("veiculoControl",function($scope,$http){
 	
-	//urlCliente = 'http://localhost:8080/SistemaLocadora/rs/cliente';
+	urlCliente = 'http://localhost:8080/SistemaLocadora/rs/cliente';
 
 	
 	urlVeiculo = 'http://localhost:8080/SistemaLocadora/rs/veiculo';
+	
+	$scope.pesquisarCliente = function(){
+		$http.get(urlCliente).success(function(clientes){
+			$scope.clientes = clientes;
+		}).error(function (erro){
+		alert(erro);
+		});
+	}
 	
 	$scope.pesquisarVeiculo = function(){
 		$http.get(urlVeiculo).success(function(veiculos){
@@ -80,6 +88,6 @@ var veiculoModule = angular.module('veiculoModule',[]);
 	}
 	
 	$scope.pesquisarVeiculo();
-	//$scope.pesquisarCliente();
+	$scope.pesquisarCliente();
 	
 });
