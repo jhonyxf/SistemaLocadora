@@ -31,25 +31,41 @@
   <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="cadastro">
-        <form style="padding:50px 50px 0 10px" class="form-horizontal">
+        <form class="form-horizontal"name="form" ng-submit="form.$valid && salvar()" novalidate>
+        
+              <br>
+						<span ng-repeat="mensagem in mensagens">{{mensagem}}<br></span>
+						<div ng-show="form.$submitted">
+						     <div ng-show="form.nome.$error.required">Preencha o nome</div>
+	      				     <div ng-show="form.nome.$error.minlength">Nome precisa ter pelo menos 5 caracteres</div>
+	      				     
+	    				</div>    				
+						<br>
+						<div class="form-group">
+						<span style="color:red" ng-show="form.$invalid && form.$dirty">
+							Digite o nome, deve conter pelo menos 5 caracteres
+						</span>
+					</div>
               <div class="form-group">
                 <label for="inputEmail3" class="col-sm-2 control-label">Código</label>
                 <div class="col-sm-6">
-                  <input type="text" ng-model="cliente.codigo" disabled="true" class="form-control" id="codigo" placeholder="codigo">
+                  <input type="number" ng-model="cliente.codigo" disabled="true" class="form-control" id="codigo" placeholder="codigo">
                 </div>
               </div>
             <div class="form-group">
                 <label for="inputEmail3" class="col-sm-2 control-label">Nome</label>
                 <div class="col-sm-6">
-                  <input type="text" ng-model="cliente.nome" class="form-control" id="nome" placeholder="Nome">
+                  <input type="text" ng-model="cliente.nome" class="form-control" id="nome" placeholder="Nome" required="" ng-minlength="5">
+                	
                 </div>
               </div>
 
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                 <button type="button" ng-click="novo()" class="btn btn-default">Novo</button>
-                  <button type="button" ng-click="salvar()" class="btn btn-primary">Salvar</button> 
+                  <button  ng-disabled="form.$invalid"  type="submit" class="btn btn-success">Salvar</button> 
                   <button type="button" ng-click="excluir()" class="btn btn-danger">Excluir</button>
+                  
                 </div>
               </div>
 </form>

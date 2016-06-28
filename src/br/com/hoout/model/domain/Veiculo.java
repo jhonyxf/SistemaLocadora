@@ -3,6 +3,8 @@ package br.com.hoout.model.domain;
 import java.io.Serializable;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -17,6 +19,8 @@ public class Veiculo implements Serializable {
 	@Column(name="CD_VEICULO")
 	private Integer codigo;
 	
+	@Size(min=7,message="Nome da placa precisa ter pelo menos 7 caracteres")
+	@NotNull(message="O campo placa é obrigatório")
 	@Column(name="NM_PLACA",length=10,nullable=false)
 	private String placa;
 	
