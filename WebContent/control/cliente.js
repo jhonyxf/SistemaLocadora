@@ -79,6 +79,7 @@ var clienteModule = angular.module('clienteModule',[]);
 				$scope.clientes.push($scope.cliente);
 				$scope.novo();
 				$scope.mensagens.push('Cliente salvo com sucesso');
+				$scope.form.$setPristine();
 			}).error(function (erro) {
 				//$scope.mensagens.push('Erro ao salvar cliente: '+JSON.stringify(erro));
 				$scope.montaMensagemErro(erro.parameterViolations);
@@ -88,6 +89,7 @@ var clienteModule = angular.module('clienteModule',[]);
 				$scope.pesquisar();
 				$scope.novo();
 				$scope.mensagens.push('Cliente atualizado com sucesso');
+				$scope.form.$setPristine();
 			}).error(function (erro) {
 				$scope.montaMensagemErro(erro.parameterViolations);
 			});

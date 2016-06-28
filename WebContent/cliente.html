@@ -34,7 +34,7 @@
         <form class="form-horizontal"name="form" ng-submit="form.$valid && salvar()" novalidate>
         
               <br>
-						<span ng-repeat="mensagem in mensagens">{{mensagem}}<br></span>
+						<span style="color:green" ng-repeat="mensagem in mensagens">{{mensagem}}<br></span>
 						<div ng-show="form.$submitted">
 						     <div ng-show="form.nome.$error.required">Preencha o nome</div>
 	      				     <div ng-show="form.nome.$error.minlength">Nome precisa ter pelo menos 5 caracteres</div>
